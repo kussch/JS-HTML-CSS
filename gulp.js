@@ -6,7 +6,7 @@ gulp.task('livereload', function(){    //here we set the task in which
 	.pipe(livereload()); // with .pipe gulp method we can chain some multiple tasks together  
 });
 
-gulp.task('default', function(){ 
+gulp.task('browseReloadTask', function(){ // 'browseTask' is name of our task, which we use with cmd>gulp browseReloadTask
 	livereload.listen(); //starts livereload server 
 	gulp.watch('.css/*.css', ['livereload']); //here we say galp to track over all of the indicated files modificationsm, changes 
 
