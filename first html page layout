@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang='ru'>
   <head>
-    <html lang="ru">
     <meta charset="utf-8">
     <title>Кваст</title>
   </head>
 <body>
+
 <div class='container'> 
 	<div class='header-top'>
  		<div class='header-logo'>
@@ -22,13 +22,14 @@
 			</table>
 			</div>
 <h1>Крафтовый квас всему голова!</h1>
-<div class='h1-elements'>
-	<input type='radio' class='radio1' checked>
-	<input type="radio" class='radio2'>
-	<input type="radio" class="radio3">	
+	<div class='h1-elements'>
+		<input type='radio' class='radio1' checked>
+		<input type="radio" class='radio2'>
+		<input type="radio" class="radio3">	
+    	</div>
 </div>
 </div>
-</div>
+
 <div class='our-products'>
 <h2>Новинки</h2>
 <div class='product-item'>
@@ -163,6 +164,7 @@
 	<input type='submit' class='btn' value='Отправить заказ'>
 </div>
 </form>
+
 <div class="page-footer">
 	<div class='page-footer-top'>
 		<div class='footer-top-logo'>
