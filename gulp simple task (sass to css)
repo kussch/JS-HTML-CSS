@@ -1,0 +1,9 @@
+var gulp = require('gulp'); // require our gulp module
+	sass = require('gulp-sass'); //require our gulp-sass module
+
+
+gulp.task('sass', function(){ //create a task/function with the 'sass' name
+	return gulp.src('app/sass/main.sass') /* this is only one string but
+	.pipe(sass())                            written for comfortable reading; here we choose files from src for task*/
+	.pipe(gulp.dest('app/css')) // here we choose the dir for return our result of compilation  
+});
