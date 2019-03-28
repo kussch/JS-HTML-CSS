@@ -8,6 +8,6 @@ gulp.task('livereload', function(){    //here we set the task in which
 
 gulp.task('browseReloadTask', function(){ // 'browseTask' is name of our task, which we use with cmd>gulp browseReloadTask
 	livereload.listen(); //starts livereload server 
-	gulp.watch('.css/*.css', ['livereload']); //here we say galp to track over all of the indicated files modificationsm, changes 
-
+	gulp.watch('.css/*.css', ['livereload']); /*here we say galp to track over all of the indicated files modifications changes and 
+	when gulp "watched" some changes he executes our task*/
 });
