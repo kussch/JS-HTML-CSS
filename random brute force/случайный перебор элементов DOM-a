@@ -1,0 +1,24 @@
+window.onload = function(){  //функция сработает лишь после того как все элементы страницы загрузятся 
+
+	var items = document.querySelectorAll('.items .item'); //назначаем переменную в которой будут все айтемы
+	for(var i = 0; i < items.length; i++){ // перебираем все количество айтемов   
+		items[i].onclick = activeItem; //по клику на любой из айтемов вызывать функцию activeItem 
+	}
+
+	function activeItem(){ 
+		this.classList.toggle('item-active'); // функция которая добавляет/убирает css-класс по клику на div
+	}
+		setInterval(function(){ 
+			var rand = mtRand(0, items.length - 1); //получаем случайное число от 0 и до случайного номера айтема(и на 1 меньше)
+			activeItem.call(items[rand]);//вызываем колом функцию activeItem в контексте (items[rand]) и устанавливаем интервал 350 м.сек
+		}, 350);
+}
+
+function mtRand(min, max) { 
+	return Math.floor(Math.random() * (max - min + 1)); /*floor округляет к целому числу полученное выражение, а
+	random возвращает случайное число с плавающей точкой от 0 до 1, к нему мы добавляем 1 чтобы число было явно целым*/
+}
+
+
+
+
