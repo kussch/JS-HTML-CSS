@@ -2,7 +2,7 @@ window.onload = function(){  //функция сработает лишь пос
 
 	var items = document.querySelectorAll('.items .item'); //назначаем переменную в которой будут все айтемы
 	for(var i = 0; i < items.length; i++){ // перебираем все количество айтемов   
-		items[i].onclick = activeItem; //по клику на любой из айтемов вызывать функцию activeItem 
+		items[i].onclick = activeItem; //по клику на любой из айтемов вызывать функцию activeItem, важно : функция без скобок ()
 	}
 
 	function activeItem(){ 
