@@ -1,0 +1,58 @@
+window.onload = function() {
+
+	var items = document.querySelectorAll('.items .item');
+
+	for (var i = 0; i < items.length; i++) { 
+		items[i].onclick = function() { // при клике по любому из айтемов выполняется функция fade и 
+			fade(this, 1000, function(){ //задаем параметры, которые будет принимать описанная ниже функция fade 
+				this.style.display = 'none'; // это колбек которым мы убираем с потока див скрытый ранее ф-ей fade ()
+			});
+		}
+	}
+}
+
+function fade(elem, t, f){ //ф-я принимающая 3 аргумента, 3-й аргумент нужен для использования колбека
+	var fps = 50;
+	var time = t || 500; 
+	var steps = time / fps;
+	var op = 1; 
+	var d0 = op / steps;
+
+	var callback = f || function(){}; 
+
+	var timer = setInterval (function(){ // вкладываем в переменную функцию, которая выполняет код много раз (setInterval) и пока не будет остановлена (clearInterval)
+		op -= d0;
+		elem.style.opacity = op; 
+		steps--; 
+
+		if (steps === 0) { // при условии что шаги равны 0 
+			clearInterval(timer); // останавливаем функцию 
+			callback.call(elem); // и цепляемся к аргументу elem функции fade, который выступает this в самой главной функции и является items
+		}
+	}, (2000 / fps)); // и задаем 
+} 
+
+---------------------------------------------------------------HTML-------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="items">
+	<div class="item">1</div>
+	<div class="item">1</div>
+	<div class="item">1</div>
+	<div class="item">1</div>
+	<div class="item">1</div>
+	<div class="item">1</div>
+	<div class="item">1</div>
+	<div class="item">1</div>
+	<div class="item">1</div>
+</div>
+
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
