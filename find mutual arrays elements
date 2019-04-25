@@ -1,0 +1,14 @@
+var myFriends = ['mike', 'sophia', 'mike1', 'mike2', 'joshua'];
+var yourFriends = ['mike', 'sophia', 'mike12'];
+var mutualFriends = [];
+
+for ( let i = 0; i < myFriends.length; i++) {
+  for ( let j = 0; j < yourFriends.length; j++)
+    {
+      if (myFriends[i] === yourFriends[j]) { // find mutual elements with strict comparison operator                                   
+        mutualFriends.push(myFriends[i]); 
+      }
+    }
+}
+
+console.log(myFriends); //expected 'mike', 'sophia'
