@@ -1,0 +1,18 @@
+const people = [
+{ name: 'Roman', age: 22, money: 3220},
+{ name: 'Anwar', age: 18, money: 3200},
+{ name: 'Vadim', age: 15, money: 100},
+{ name: 'Ivan', age: 17, money: 42200},
+{ name: 'Igor', age: 20, money: 1550}
+]
+
+const amount = people
+	.filter(person => person.money > 3200)
+	.map(person => {
+		return {
+			info: `${person.name} (${person.age})`,
+			money: Math.sqrt(person.money)
+		}
+	})
+	.reduce((total, person) => total + person.money, 0)
+	console.log(amount)
