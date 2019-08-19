@@ -1,0 +1,9 @@
+function clean(elements) {
+	return elements.filter((el) => !isNaN(Number(el)))
+}
+
+function sum() {
+	return clean(Array.from(arguments)).reduce((a, b) => Number(a) + Number(b), 0)
+}
+
+console.log(sum([1], [2], 2, 'as')); //expected 5 
