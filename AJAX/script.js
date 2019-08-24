@@ -1,6 +1,6 @@
 window.onload = function() {
 	document.querySelector('#shop_ip').onclick = function() {
-		ajaxGet('ip.php', function(data){
+		ajaxGet('ip.php', function(data) {
 			console.log(data);
 		});
 		
@@ -13,7 +13,7 @@ window.onload = function() {
 
 function ajaxGet(url, callback) {
 
-	var f = callback || function(data){};
+	var f = callback || function(data) {};
 
 	var request = new XMLHttpRequest();
 
