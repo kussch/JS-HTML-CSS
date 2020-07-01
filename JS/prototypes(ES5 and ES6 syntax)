@@ -1,0 +1,64 @@
+ES5
+
+const Animal = function(options) { //constructor function
+  this.name = options.name
+  this.color = options.color
+
+  this.voice = function() {
+    console.log('voice from', this.name)
+  }
+}
+//or we can add new function to our prototype using 
+//Animal.prototype.voice = function() {
+//console.log('voice from', this.name)
+//}
+
+console.log(Animal.prototype)//can check our contructor in browser's console
+
+const cat = new Animal({name: 'Vasiliy', color: 'black'})
+
+console.log(cat)
+
+//creating new object using Animal's properties
+const Cat = function(options) {
+  Animal.apply(this, arguments) //binding Animal props to Cat (first parameter - is our current object)
+}
+
+const cat1 = new Cat({name: 'Vasiliy1', color: 'black'});
+
+console.log(cat1)
+
+cat1.voice()
+
+------------------------------------------------
+
+ES6
+
+class Animal {
+  constructor(options) {
+    this.name = options.name
+    this.color = options.color
+    this.tail = options.tail
+  }
+
+  voice() {
+    console.log('voice from', this.name)
+  }
+}
+
+const cat = new Animal({name:'Vasiliy', color:'black'})
+console.log(cat)
+
+class Cat extends Animal {
+  constructor(options) {
+    super(options)
+
+    this.tail = options.tail //extending for example by tail property from Animal
+  }
+}
+
+const cat1 = new Cat({name: 'Vasiliy1', color:'black', tail:true})
+
+console.log(cat1)
+
+cat1.voice()
